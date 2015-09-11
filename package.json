@@ -1,0 +1,21 @@
+{
+  "name": "economic-dashboards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node ./node_modules/nodemon/bin/nodemon.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-handlebars": "^2.0.1",
+    "handlebars": "^4.0.2",
+    "request": "^2.61.0",
+    "request-promise": "^0.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.4.1"
+  }
+}
