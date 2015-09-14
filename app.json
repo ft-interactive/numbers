@@ -1,0 +1,29 @@
+{
+  "name": "ig-numbers",
+  "description": "The world in numbers",
+  "repository": "https://github.com/ft-interactive/numbers",
+  "success_url": "/",
+  "env": {
+    "NODE_ENV": {
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "value": "false"
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby"
+    }
+  ],
+  "addons": []
+}
