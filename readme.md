@@ -1,21 +1,22 @@
-# numbers
+# Numbers
 
-```
-npm install
+## Contributing
+
+See the [contributing guide](contributing.md) if you want to run the application locally, make changes or submit a pull request.
+
+Quick start for the impatient:
+
+```shell
+git clone https://github.com/ft-interactive/numbers.git && \
+cd numbers && \
+npm install && \
 npm run watch
 ```
 
 ### Initial URLs
 
-UK: http://localhost:3000/economic-dashboard/uk
+UK: http://localhost:3000/sites/numbers/economies/uk
+US: http://localhost:3000/sites/numbers/economies/us
 
-US: http://localhost:3000/economic-dashboard/us
-
-### Plan
-
- * rendering the current dashboards on the server (ie. http://ig.ft.com/sites/uk/economic-dashboard/)
- * automate the inclusion of 'big numbers' ( http://git.svc.ft.com:8080/projects/IGCT/repos/bloomberg-economic-data/browse )
- * integrate the chart drawing code
- * ditto data gathering?
- * ???
- * profit
+## Licence
+This software is published by the Financial Times under the [MIT licence](http://opensource.org/licenses/MIT).

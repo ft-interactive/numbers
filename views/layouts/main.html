@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="core">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ default meta.title site.name }} – FT.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="preconnect" href="https://build.origami.ft.com" />
+    <link rel="preconnect" href="https://cdn.polyfill.io" />
+    <link rel="preconnect" href="https://image.webservices.ft.com" />
+
+    <meta name="robots" content="index,follow">
+
+    <style>.core .o--if-js,.enhanced .o--if-no-js {display: none !important;}</style>
+    <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-fonts@^1.8,o-footer@^3.1" />
+    <link rel="stylesheet" href="{{ asset 'styles/main.css' }}">
+    {{> analytics-ga }}
+
+    {{> page-meta }}
+
+    {{> ctm }}
+
+    {{> polyfill }}
+
+  </head>
+  <body class="o-hoverable-on">
+
+    {{> site-header }}
+
+    <main>{{{body}}}</main>
+    
+    {{> site-footer }}
+    {{> scripts }}
+    {{> analytics-chartbeat }}
+  </body>
+</html>
