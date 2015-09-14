@@ -9,7 +9,7 @@ app.engine('.hbs', handlebars());
 
 app.set('view engine', '.hbs');
 
-app.route('/economic-dashboard/:area')
+app.route('/sites/numbers/:area')
 	.get(function(req, res) {
 		let area = req.params.area.toLowerCase();
 		console.log('c', config.get(area) );
