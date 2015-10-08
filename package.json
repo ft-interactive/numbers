@@ -24,6 +24,7 @@
     "bower_components"
   ],
   "dependencies": {
+    "@financial-times/n-handlebars": "^1.5.0",
     "backoff": "^2.4.1",
     "circuit-breaker-js": "0.0.1",
     "debug": "^2.2.0",
