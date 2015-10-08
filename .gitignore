@@ -1,3 +1,4 @@
+public
 node_modules
 bower_components
 logs
@@ -6,3 +7,4 @@ npm-debug.log*
 pids
 *.pid
 *.seed
+.env

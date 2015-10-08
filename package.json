@@ -1,25 +1,73 @@
 {
-  "name": "numbers",
+  "name": "ig-numbers",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "web.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "node ./node_modules/nodemon/bin/nodemon.js"
+    "start": "node web",
+    "postinstall": "bower install && npm run build",
+    "build": "gulp",
+    "test": "eslint . && gulp build",
+    "watch-server": "nodemon --watch server --watch ./web.js web",
+    "watch-client": "gulp watch",
+    "watch": "npm run watch-client & npm run watch-server"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ft-interactive/numbers.git"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "bower_components"
+  ],
   "dependencies": {
+    "backoff": "^2.4.1",
+    "circuit-breaker-js": "0.0.1",
+    "debug": "^2.2.0",
+    "es6-promise": "^3.0.2",
+    "express": "^4.13.3",
+    "express-enrouten": "^1.2.1",
     "express-handlebars": "^2.0.1",
+    "glob": "^5.0.14",
     "handlebars": "^4.0.2",
-    "request": "^2.61.0",
-    "request-promise": "^0.4.3"
+    "hbs": "^3.1.1",
+    "html-minifier": "^0.7.2",
+    "isomorphic-fetch": "^2.1.1",
+    "morgan": "^1.6.1",
+    "response-time": "^2.3.1",
+    "swag": "^0.7.0"
   },
   "devDependencies": {
-    "nodemon": "^1.4.1"
+    "auto-plug": "^1.0.2",
+    "babel-core": "^5.8.12",
+    "babel-eslint": "^4.0.5",
+    "bower": "^1.5.3",
+    "browser-sync": "^2.9.10",
+    "connect-browser-sync": "^2.0.1",
+    "debowerify": "^1.3.1",
+    "del": "^1.2.0",
+    "eslint": "^0.24.1",
+    "gulp": "^3.9.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-napkin": "^0.1.0",
+    "gulp-rev-replace": "^0.4.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "hbsfy": "^2.2.1",
+    "nodemon": "^1.4.1",
+    "origami-build-tools": "^3.3.0",
+    "run-sequence": "^1.1.2"
   },
   "engines": {
-    "node": "4.x",
+    "node": "4.1.x",
     "npm": "2.14.x"
   }
 }

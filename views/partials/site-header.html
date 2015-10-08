@@ -1,0 +1,30 @@
+<header id="ft-header">
+  <div class="ft-header__center-logo">
+    <a href="http://www.ft.com"><i class="o-ft-icons-icon o-ft-icons-icon--brand-ft-masthead"></i></a>
+  </div>
+  <div class="ft-header__center-title">
+    <a href="#main-title" class="ft-header__primary-label">{{default dashboard.title.text site.title}}</a>
+  </div>
+  <div class="ft-header__left">
+    <a href="http://www.ft.com"><i class="o-ft-icons-icon o-ft-icons-icon--brand-ft-logo-square"></i></a>
+  </div>
+  <div class="ft-header__right">
+    <span href="#" class="ft-header__primary-link ft-header-button">
+      <span class="ft-header__section-label">Sections</span>
+      <i class="o-ft-icons-icon o-ft-icons-icon--hamburger"></i>
+    </span>
+  </div>
+  <div class="container-menu">
+    <div class="o-grid-row ft-header__sections ft-header__sections--menu ft-header__sections--menu-js">
+      <ul class="sections-index">
+        <ul class="sections-index__children sections-index__children--first" data-o-grid-colspan="6 S6 M12 L12 XL12">
+        {{#each dashboard.groups}}
+          <li class="sections-index__child ">
+            <a class="sections--{{ type }}" href="#{{ type }}">{{ name }}</a>
+          </li>
+        {{/each}}
+        </ul>
+      </ul>
+    </div>
+  </div>
+</header>

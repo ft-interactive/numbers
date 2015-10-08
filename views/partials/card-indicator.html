@@ -1,0 +1,33 @@
+<div class="indicator-card indicator-card__{{type}}">
+  <div class="indicator-card__title {{type}}">
+    <div class="title"><span>{{category}}</span><br/>{{indicator}}</div>
+  </div>
+  <div class="indicator-card__body">
+
+    {{#if charturl}}
+    <div class="chart">
+      <object type="image/svg+xml" data="{{charturl}}">
+        <!--[if lt IE 9]>
+        <img src="https://image.webservices.ft.com/v1/images/raw/{{charturl}}?width=308&amp;source=ig_bloomberg">
+        <![endif]-->
+      </object>
+    </div>
+    {{/if}}
+
+    {{#if shortblurb}}
+      <div class="blurb">
+        {{{shortblurb}}}
+      </div>
+    {{/if}}
+
+    {{#if nowcast}}
+      <div class="now-casting">
+        <p>Data provided by</p>
+        <a href="https://www.now-casting.com/" target="_blank">
+          <img src="//ig.ft.com/static/sites/2014/economic-indicators/nowcastinglogo5.png" alt="">
+        </a>
+      </div>
+    {{/if}}
+
+  </div> 
+</div>
