@@ -13,27 +13,50 @@
     </div>
   {{/if}}
 
-  {{#if big-number}}
-  <div class="headline-figs">
-    <div class="bignum-heading">{{bignum-heading}}</div>
-    <div class="bignum">{{big-number}}<span>{{bignum-units}}</span></div>
-    <div class="arrow {{arrow-direction}}">{{arrows arrow-direction}}</div>   
-  </div>
+  {{#if bignum-heading}}
+    {{#is-number big-number}}
+      {{> bignum heading=bignum-heading value=big-number units=bignum-units}}
+    {{else}}
+      {{#if bignum-name}}
+        {{#with (lookup @root.latest bignum-name)}}
+          {{> bignum heading= ../../bignum-heading value=value units=unit date=date}}
+        {{/with}}
+      {{/if}}
+    {{/is-number}}
   {{/if}}
 
+  {{#or short-heading annual-heading}}
   <div class="small-figs">
-    <div class="small-figs-holder">
-      <div class="small-figs-heading">{{short-heading}}</div>
-      <div class="small-figs-value">{{short-change}}<span>{{units}}</span></div>
-    </div>
-    <div class="small-figs-holder right">
-      <div class="small-figs-heading">{{annual-heading}}</div>
-      <div class="small-figs-value">{{annual-change}}<span>{{units}}</span></div>
-    </div>
+
+    {{#is-number short-change}}
+      {{> smallnum heading=short-heading value=short-change units=units}}
+    {{else}}
+      {{#if short-name}}
+        {{#with (lookup @root.latest short-name)}}
+          {{> smallnum heading=../../short-heading value=value units=unit date=date}}
+        {{/with}}
+      {{/if}}
+    {{/is-number}}
+
+    {{#is-number annual-change}}
+      {{> smallnum heading=annual-heading value=annual-change units=units}}
+    {{else}}
+      {{#if annual-name}}
+        {{#with (lookup @root.latest annual-name)}}
+          {{> smallnum heading=../../annual-heading value=value units=unit date=date}}
+        {{/with}}
+      {{/if}}
+    {{/is-number}}
+
   </div>
-  
+  {{/or}}
+
   {{#if updated}}
-    <div class="timestamp">Last updated: {{date updated}}</div>
+    <div class="timestamp">As of {{date updated}}</div>
+  {{/if}}
+
+  {{#if footnote}}
+    <div class="timestamp">{{{footnote}}}</div>
   {{/if}}
 
 </div>

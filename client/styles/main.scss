@@ -395,6 +395,14 @@ h1 {
   }
 }
 
+.timestamp {
+  font-size: 12px;
+}
+
+.footnote {
+  font-size: 12px;
+}
+
 .indicator-group {
   padding-top: 50px;
   background-color: transparent;
@@ -420,7 +428,7 @@ h1 {
   }
   .blurb {
     font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
     margin-bottom: 20px;
     a {
       color: #ffffff;
@@ -434,9 +442,6 @@ h1 {
   .blurb a:hover {
     opacity: 0.5;
     transition: oapcity 0s;
-  }
-  .timestamp {
-    font-size: 12px;
   }
   .tweet-link {
     a {
@@ -454,10 +459,12 @@ h1 {
   color: #ffffff;
   text-align: center; 
   margin-bottom: 20px;
+
   .bignum-heading {
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 600;
   }
+
   .bignum {
     font-size: 58px;
     font-weight: 200;
@@ -493,7 +500,7 @@ h1 {
   .small-figs-holder {
     display: inline-block;
     width: 45%;
-    &.right {
+    &:nth-child(even) {
       margin-left: 20px;
     }
     .small-figs-heading {
@@ -561,7 +568,7 @@ h1 {
   .blurb {
     color: oColorsGetPaletteColor(pink-tint5);
     font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
     a {
       color: #2e6e9e;
       text-decoration: none;
@@ -588,11 +595,13 @@ h1 {
      height: 100%;
     }
   }
-  .timestamp {
-    font-size: 12px;
+
+  .timestamp,
+  .footnote {
     color: oColorsGetPaletteColor(pink-tint5);
     margin-top: 12px;
   }
+
   .now-casting {
     display: block;
     float: right;

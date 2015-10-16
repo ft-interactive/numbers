@@ -1,4 +1,4 @@
-<meta name="description" content="{{ default meta.description site.description}}">
+<meta name="description" content="{{default meta.description site.description}}">
 
 {{#any meta.keywords}}
 <meta name="keywords" content="{{join meta.keywords ','}}">
@@ -6,16 +6,20 @@
 
 <meta name="copyright" content="Financial Times">
 
-<meta property="og:site_name" content="{{ default meta.og.site_name site.name}}"/>
+<meta property="og:site_name" content="{{default meta.og.site_name site.name}}"/>
+
 {{#if meta.og.type}}
-<meta property="og:type" content="{{ default meta.og.type}}"/>
+<meta property="og:type" content="{{default meta.og.type}}"/>
 {{/if}}
-<meta property="og:title" content="{{ default meta.og.title meta.title}}"/>
+
+<meta property="og:title" content="{{default meta.og.title meta.title}}"/>
+
 {{#or meta.og.description meta.description}}
-<meta property="og:description" content="{{ default meta.og.description meta.description}}" />
+<meta property="og:description" content="{{default meta.og.description meta.description}}" />
 {{/or}}
+
 {{#or meta.og.image meta.image}}
-<meta property="og:image" content="{{ default meta.og.image meta.image}}"/>
+<meta property="og:image" content="{{default meta.og.image meta.image}}"/>
 {{/or}}
 <meta property="fb:page_id" content="8860325749" />
 

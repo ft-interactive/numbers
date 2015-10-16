@@ -1,0 +1,8 @@
+{{#if heading}}
+  {{#is-number value}}
+    <div class="headline-figs" {{#if date}}title="Data last updated {{date date}}"{{/if}}>
+      <div class="bignum-heading">{{replace-date date heading}}</div>
+      <div class="bignum">{{value}}<span>{{units}}</span></div>
+    </div>
+  {{/is-number}}
+{{/if}}
