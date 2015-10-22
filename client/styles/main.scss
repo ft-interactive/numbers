@@ -8,7 +8,7 @@ $o-grid-debug-mode: true;
 @import "o-assets/main";
 
 @include oAssetsSetModulePaths((
-  'o-ft-icons': '//build.origami.ft.com/files/o-ft-icons@^2.3.7'
+  'o-ft-icons': '//build.origami.ft.com/files/o-ft-icons@^2.4'
 ));
 
 $o-grid-layouts: (
