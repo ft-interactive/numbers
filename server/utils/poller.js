@@ -11,13 +11,13 @@ const global_poll_interval = process.env.POLL_INTERVAL ? parseInt(process.env.PO
 module.exports = Poller;
 
 function Poller(url, options) {
+  var options = options || {};
   this.url = url;
   this.status = {on: false, since: new Date()};
-  this.interval = global_poll_interval;
+  this.interval = options.interval || global_poll_interval;
   this.last = {};
   this.is_stopped = true;
 
-  var options = options || {};
   var timer;
   var backoff_options = {
     initialDelay: this.interval * 2,

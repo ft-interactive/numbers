@@ -15,6 +15,17 @@ exports.create_dashboard = spreadsheet => {
   dashboard.title = options.title;
   dashboard.logo = options.logo;
   dashboard.introText = options.introText;
+  dashboard.meta = {
+    title: options.title && options.title.text,
+    description: options.description && options.description.text,
+    keywords: options.keywords && options.keywords.text.split(/, */g),
+    og: {
+      site_name: options['og:site_name'] && options['og:site_name'].text,
+      title: options['og:title'] && options['og:title'].text,
+      description: options['og:description'] && options['og:description'].text,
+      image: options['og:image'] && options['og:image'].text
+    }
+  }
 
   return dashboard;
 };

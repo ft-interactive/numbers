@@ -8,7 +8,7 @@
     <div class="chart">
       <object type="image/svg+xml" data="{{charturl}}">
         <!--[if lt IE 9]>
-        <img src="https://image.webservices.ft.com/v1/images/raw/{{charturl}}?width=308&amp;source=ig_bloomberg">
+        <img src="{{{ svg-fallback-img charturl }}}">
         <![endif]-->
       </object>
     </div>
@@ -26,6 +26,12 @@
         <a href="https://www.now-casting.com/" target="_blank">
           <img src="//ig.ft.com/static/sites/2014/economic-indicators/nowcastinglogo5.png" alt="">
         </a>
+      </div>
+    {{/if}}
+
+    {{#if footnote}}
+      <div class="timestamp">
+        {{{footnote}}}
       </div>
     {{/if}}
 

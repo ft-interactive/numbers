@@ -46,6 +46,8 @@ function create_poller(name, url) {
     return dashboard;
   };
 
+  console.log('create poller for %s on %s', name, url);
+
   return poller;
 }
 

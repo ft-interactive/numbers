@@ -1,0 +1,8 @@
+{{#if heading}}
+  {{#is-number value}}
+    <div class="small-figs-holder" {{#if date}}title="Date last changed {{date date}}"{{/if}}>
+      <div class="small-figs-heading">{{replace-date date heading}}</div>
+      <div class="small-figs-value">{{value}}<span>{{units}}</span></div>
+    </div>
+  {{/is-number}}
+{{/if}}

@@ -1,27 +1,7 @@
 'use strict';
 
 const get_dashboard = require('../../models/economy/fetch');
-/*
-
-US
-
-description=The FT’s one-stop overview of key US economic data and trends, including GDP, inflation, unemployment, consumer indicators, and the outlook for US interest rates
-site name=US economy at a glance
-og:title=21 charts that explain the US economy
-og:description=The FT’s one-stop shop for key US economic data and trends, including GDP, inflation, unemployment, consumer indicators, and the outlook for US interest rates
-og:image=http://im.ft-static.com/content/images/c46bbf42-5546-11e5-8642-453585f2cfcd.jpg
-
-
-UK
-
-title=The UK economy at a glance
-description=The FT’s one-stop overview of key economic data, including GDP, inflation, unemployment, the major business surveys, the public finances and house prices
-og:site_name=UK economy at a glance
-og:title=44 charts that explain the UK economy
-og:description=The FT’s one-stop shop for key economic data, including GDP, inflation, unemployment, the major business surveys, the public finances and house prices
-og:image=http://im.ft-static.com/content/images/4b633cae-37a2-11e5-bdbb-35e55cbae175.png
-
-*/
+const get_latest = require('../../models/datasets/latest/fetch.js');
 
 function dashboard(req, res) {
   res.render('economies/dashboard');
@@ -32,9 +12,13 @@ function card(req, res) {
 }
 
 function find_economy(req, res, next, economy) {
-  res.locals.meta = {og:{}};
-  get_dashboard(economy).then(data => {
-    res.locals.dashboard = data;
+  Promise.all([
+    get_dashboard(economy),
+    get_latest()
+  ]).then(data => {
+    res.locals.dashboard = data[0];
+    res.locals.latest = data[1];
+    res.locals.meta = res.locals.dashboard.meta;
     next();
   }).catch(next);
 }
