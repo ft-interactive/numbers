@@ -4,8 +4,6 @@
   "dependencies": {
     "o-colors": ">=2.5.0 <4",
     "o-hoverable": "^1.1.0",
-    "o-grid": "^3.2.5",
-    "o-assets": "^2.0.0",
-    "o-ft-icons": "^2.3.7"
+    "o-grid": "^3.2.5"
   }
 }
