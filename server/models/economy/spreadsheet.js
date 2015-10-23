@@ -1,7 +1,7 @@
 'use strict';
 
 exports.dashboard_data_url = (key, republish) => 
-  'http://bertha.ig.ft.com/' + (republish ? 'republish' : 'view') + '/publish/gss/' + key + '/data,categories,credits,groups,options';
+  'http://bertha.ig.ft.com/' + (republish ? 'republish' : 'view') + '/publish/gss/' + key + '/data,credits,groups,options';
 
 exports.create_dashboard = spreadsheet => {
 
