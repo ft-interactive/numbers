@@ -6,6 +6,7 @@ $o-grid-debug-mode: true;
 @import 'normalize';
 @import 'o-colors/main';
 
+@import "origami-overrides/o-footer";
 
 $o-grid-layouts: (
     S:  240px,
@@ -18,19 +19,19 @@ $o-grid-layouts: (
 @import "o-hoverable/main";
 
 
-$ft-color-inflation: #af516c; //#bb6d82;
-$ft-color-gdp: #557c85; //#76acb8;
-$ft-color-manufacturing: #bd5753; //#d7706c;
-$ft-color-construction: #6e785f; //#ecafaf;
-$ft-color-services: #9a6a6a; //#b07979;
-$ft-color-labour: #807085; //#8f7d95;
-$ft-color-biz-lending: #8f6e57; //#d8a69a;
-$ft-color-housing: #807373; //#ccc2c2;
-$ft-color-retail: #4678a4; //#4e86b6;
-$ft-color-public: #348094; //#81d0e6;
+$ft-color-inflation: #af516c;
+$ft-color-gdp: #557c85;
+$ft-color-manufacturing: #bd5753;
+$ft-color-construction: #6e785f;
+$ft-color-services: #9a6a6a;
+$ft-color-labour: #807085;
+$ft-color-biz-lending: #8f6e57;
+$ft-color-housing: #807373;
+$ft-color-retail: #4678a4;
+$ft-color-public: #348094;
 
 html {
-   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
 body {
@@ -134,7 +135,7 @@ body {
   z-index: 10000;
   border-bottom: 1px solid #cec6b9;
   text-align: left;
-  // box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+
   .ft-header__center-logo,
   .ft-header__center-title {
     position: absolute;
@@ -169,7 +170,6 @@ body {
     &.sticky {
       pointer-events: visible;
       transition: opacity 0.3s;
-      // display: block;
       opacity: 1;
     }    
     .ft-header__primary-label {
@@ -250,7 +250,6 @@ body {
   }
 }
 
-
 .ft-header__left {
   text-align: left;
   font-size: 14px;
@@ -260,7 +259,6 @@ body {
     font-size: 24px;
   }
 }
-
 
 .ft-header__sections {
   float: right;
@@ -282,6 +280,7 @@ body {
   padding: 0;
   border-top: 1px solid transparent;
 }
+
 .sections-index ul {
   list-style: none;
   font-family: 'MetricWeb', sans-serif;
@@ -290,6 +289,7 @@ body {
   text-align: left;
   padding: 0 6px;
 }
+
 .sections-index__children {
   // width: 210px;
   li { 
@@ -312,6 +312,7 @@ body {
     border-bottom: 0;
   }  
 }
+
 .sections-index__children--last {
   li:last-child {
     border-bottom: 0;
