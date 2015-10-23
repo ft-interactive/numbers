@@ -31,7 +31,7 @@ module.exports = function (date, string) {
     result = result.replace('MM', short_months[date.getUTCMonth()]);
   }
 
-   if (result.indexOf('YYYY') !== -1) {
+  if (result.indexOf('YYYY') !== -1) {
     result = result.replace('YYYY', date.getUTCFullYear());
   }
 
