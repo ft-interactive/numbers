@@ -11,6 +11,7 @@ const gtg = require('./gtg');
 const health = require('./health');
 
 app.locals.site = require('./site');
+app.locals.is_prod = app.get('env') === 'production';
 
 app.set('port', process.env.PORT);
 app.set('x-powered-by', false);
