@@ -1,0 +1,51 @@
+.sections-index {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid transparent;
+
+  ul {
+    list-style: none;
+    color: oColorsGetPaletteColor(pink-tint5);
+    float: right;
+    text-align: left;
+    padding: 0 6px;
+  }
+}
+
+.sections-index__children {
+
+  li { 
+    line-height: 34px;
+    border-bottom: 1px solid oColorsGetPaletteColor(pink-tint2);
+    margin-bottom: 4px;
+  }
+
+  li a {
+    text-decoration: none;
+    color: oColorsGetPaletteColor(pink-tint5);
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    padding-left: 4px;
+  }
+}
+
+.sections-index__children--first li:last-child {
+  border-bottom: 0;
+}
+
+.sections-index__children--last li:last-child {
+  border-bottom: 0;
+}
+
+@include oGridRespondTo(M) {
+
+  .sections-index ul {
+    float: none;
+  }
+
+  .sections-index__children--first li:last-child {
+    border-bottom: 1px solid oColorsGetPaletteColor(pink-tint2);
+  }
+
+}

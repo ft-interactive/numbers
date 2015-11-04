@@ -1,62 +1,65 @@
-<div class="index-card index-card__{{type}} {{type}}">
-  <div class="tweet-link">
-    <a target="_blank" href="https://twitter.com/intent/tweet?url=http://ig.ft.com/sites/uk/economic-dashboard/%23{{type}}&amp;text=44 charts that explain the UK economy" si:link="social-media_twitter" alt="Tweet these {{type}} figures"></a>
+<section class="card card--index bg--{{group.color}}">
+
+  <div class="card__header">
+    <a class="card__share card__share--twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://ig.ft.com/sites/uk/economic-dashboard/%23{{group.id}}&amp;text={{default @root.meta.og.title @root.meta.title}}" si:link="social-media_twitter" alt="Tweet these {{group.id}} figures">Tweet this</a>
+    {{#if title}}
+      <h2 class="card__title">{{title}}</h2>
+    {{/if}}
   </div>
 
-  {{#if category}}
-    <div class="title">{{category}}</div>
-  {{/if}}
+  <div class="card__body">
+    {{#if body}}
+        {{{body}}}
+    {{/if}}
 
-  {{#if shortblurb}}
-    <div class="blurb">
-      {{{shortblurb}}}
+
+    {{#if bignum-heading}}
+      {{#is-number big-number}}
+        {{> bignum heading=bignum-heading value=big-number units=bignum-units}}
+      {{else}}
+        {{#if bignum-name}}
+          {{#with (lookup @root.latest bignum-name)}}
+            {{> bignum heading= ../../bignum-heading value=value units=unit date=date}}
+          {{/with}}
+        {{/if}}
+      {{/is-number}}
+    {{/if}}
+
+    {{#or short-heading annual-heading}}
+    <div class="small-figs">
+
+      {{#is-number short-change}}
+        {{> smallnum heading=short-heading value=short-change units=units}}
+      {{else}}
+        {{#if short-name}}
+          {{#with (lookup @root.latest short-name)}}
+            {{> smallnum heading=../../short-heading value=value units=unit date=date}}
+          {{/with}}
+        {{/if}}
+      {{/is-number}}
+
+      {{#is-number annual-change}}
+        {{> smallnum heading=annual-heading value=annual-change units=units}}
+      {{else}}
+        {{#if annual-name}}
+          {{#with (lookup @root.latest annual-name)}}
+            {{> smallnum heading=../../annual-heading value=value units=unit date=date}}
+          {{/with}}
+        {{/if}}
+      {{/is-number}}
+
     </div>
-  {{/if}}
-
-  {{#if bignum-heading}}
-    {{#is-number big-number}}
-      {{> bignum heading=bignum-heading value=big-number units=bignum-units}}
-    {{else}}
-      {{#if bignum-name}}
-        {{#with (lookup @root.latest bignum-name)}}
-          {{> bignum heading= ../../bignum-heading value=value units=unit date=date}}
-        {{/with}}
-      {{/if}}
-    {{/is-number}}
-  {{/if}}
-
-  {{#or short-heading annual-heading}}
-  <div class="small-figs">
-
-    {{#is-number short-change}}
-      {{> smallnum heading=short-heading value=short-change units=units}}
-    {{else}}
-      {{#if short-name}}
-        {{#with (lookup @root.latest short-name)}}
-          {{> smallnum heading=../../short-heading value=value units=unit date=date}}
-        {{/with}}
-      {{/if}}
-    {{/is-number}}
-
-    {{#is-number annual-change}}
-      {{> smallnum heading=annual-heading value=annual-change units=units}}
-    {{else}}
-      {{#if annual-name}}
-        {{#with (lookup @root.latest annual-name)}}
-          {{> smallnum heading=../../annual-heading value=value units=unit date=date}}
-        {{/with}}
-      {{/if}}
-    {{/is-number}}
+    {{/or}}
 
   </div>
-  {{/or}}
 
-  {{#if updated}}
-    <div class="timestamp">As of {{date updated}}</div>
-  {{/if}}
+  <div class="card__footer">
+    {{#if updated}}
+      <div class="timestamp">As of {{date updated}}</div>
+    {{/if}}
 
-  {{#if footnote}}
-    <div class="timestamp">{{{footnote}}}</div>
-  {{/if}}
-
-</div>
+    {{#if footnote}}
+      <div class="footnote">{{{footnote}}}</div>
+    {{/if}}
+  </div>
+</section>

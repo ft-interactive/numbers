@@ -1,0 +1,60 @@
+.headline-figs {
+  color: #ffffff;
+  text-align: center; 
+  margin-bottom: 20px;
+
+  .bignum-heading {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .bignum {
+    font-size: 58px;
+    font-weight: 200;
+    display: inline-block;
+    span {
+      font-size: 44px;
+    }
+  }
+  .arrow {
+    display: inline-block;
+    margin-left: 12px;
+    position: relative;
+    &.down {
+      transform: rotate(180deg);
+      bottom: 8px;
+    }
+    &.up {
+      margin-right: 12px;
+      bottom: 6px;
+    }
+    &.level {
+      font-size: 12px;
+      text-transform: uppercase;
+      bottom: 12px;
+    }
+  }
+}
+
+.small-figs {
+  text-align: center; 
+  margin-bottom: 8px;
+  font-weight: 200;
+  .small-figs-holder {
+    display: inline-block;
+    width: 45%;
+    &:nth-child(even) {
+      margin-left: 20px;
+    }
+    .small-figs-heading {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .small-figs-value {
+      font-size: 36px;
+      span {
+        font-size: 21px;
+      }
+    }
+  }
+}

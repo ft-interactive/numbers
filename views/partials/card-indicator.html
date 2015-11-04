@@ -1,39 +1,37 @@
-<div class="indicator-card indicator-card__{{type}}">
-  <div class="indicator-card__title {{type}}">
-    <div class="title"><span>{{category}}</span><br/>{{indicator}}</div>
+<section class="card">
+
+  <div class="card__header bg--{{group.color}}">
+    <h3 class="card__title">{{title}}</h3>
   </div>
-  <div class="indicator-card__body">
+
+  <div class="card__body">
 
     {{#if charturl}}
-    <div class="chart">
+    <figure>
       <object type="image/svg+xml" data="{{charturl}}">
         <!--[if lt IE 9]>
         <img src="{{{ svg-fallback-img charturl }}}">
         <![endif]-->
       </object>
-    </div>
+    </figure>
     {{/if}}
 
-    {{#if shortblurb}}
-      <div class="blurb">
-        {{{shortblurb}}}
-      </div>
+    {{#if body}}
+      {{{body}}}
     {{/if}}
 
+  </div>
+
+  <div class="card__footer">
     {{#if nowcast}}
-      <div class="now-casting">
-        <p>Data provided by</p>
-        <a href="https://www.now-casting.com/" target="_blank">
-          <img src="//ig.ft.com/static/sites/2014/economic-indicators/nowcastinglogo5.png" alt="">
-        </a>
-      </div>
+      <p class="a">Data provided by <a href="https://www.now-casting.com/" target="_blank"><img src="http://ig.ft.com/static/sites/2014/economic-indicators/nowcastinglogo5.png" /></a></p>
     {{/if}}
 
     {{#if footnote}}
-      <div class="timestamp">
+      <p class="footnote">
         {{{footnote}}}
-      </div>
+      </p>
     {{/if}}
+  </div>
 
-  </div> 
-</div>
+</section>

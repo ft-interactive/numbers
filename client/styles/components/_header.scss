@@ -1,0 +1,203 @@
+.ft-header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff1e0;
+  z-index: 10000;
+  border-bottom: 1px solid #cec6b9;
+  text-align: left;
+
+  @include oGridRespondTo($from:S, $until:M) {
+    font-size: 16px;
+  }
+
+  @include oGridRespondTo(L) {
+    text-align: center;
+  }
+
+  &__center-logo,
+  &__center-title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+
+  &__center-logo {
+    overflow: hidden;
+    height: 50px;
+    display: none;
+    .o-ft-icons-icon--brand-ft-masthead {
+      font-size: 250px;
+      text-decoration: none;
+      line-height: 236px;
+      color: #000000;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+      &.sticky {
+        opacity: 0;
+        transition: opacity 0s;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__center-title {
+    pointer-events: none;
+    opacity: 0;
+    margin-left: 40px;
+    &.sticky {
+      pointer-events: visible;
+      transition: opacity 0.3s;
+      opacity: 1;
+    }    
+  }
+
+  &__primary-label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 16px;
+    text-decoration: none;
+    color: oColorsGetPaletteColor(grey-tint5);
+    transition: opacity 0s;
+  }
+
+  &__right,
+  &__left {
+    height: 50px;
+    font-family: 'MetricWeb', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    i {
+      font-size: 18px;
+    }
+  }
+
+  #{$o-hoverable-if-hover-enabled} &-button:hover {
+    color: oColorsGetPaletteColor(pink-tint5);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  &__right {
+    width: 90px;
+    padding: 13px 0;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    color: oColorsGetPaletteColor(pink-tint4);
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: middle;
+    border-left: 1px solid oColorsGetPaletteColor(pink-tint2);
+    .ft-header__primary-link {
+      cursor: pointer;
+    }
+    .ft-header__section-label {
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+  }
+
+  &__left {
+    width: 200px;
+    padding: 8px 10px;
+    float: left;
+    font-size: 14px;
+    text-align: left;
+    color: oColorsGetPaletteColor(grey-tint5);
+    font-weight: 600;
+    opacity: 1;
+    i {
+      margin-right: 4px;
+      font-size: 24px;
+      display: inline-block;
+      color: oColorsGetPaletteColor(grey-tint5);
+    }
+    &.sticky {
+      opacity: 1;
+    }
+  }
+
+  &__sections {
+    float: right;
+    width: 100%;
+    margin: 0;
+    display: none;
+    background-color: oColorsGetPaletteColor(pink-tint1);
+    border-top: 1px solid oColorsGetPaletteColor(pink-tint3); 
+    border-bottom: 1px solid oColorsGetPaletteColor(pink-tint3); 
+    padding-bottom: 4px;
+    &.menuon {
+      display: block;
+    }
+  }
+}
+
+
+@include oGridRespondTo(M) {  
+  .ft-header {
+
+    &__center-title {
+      margin-left: 46px;
+    }
+
+    &__primary-label {
+      font-size: 16px;
+    }
+
+    &__left {
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 16px;
+      width: 240px;
+      i {
+        margin-right: 4px;
+        font-size: 30px;
+      }
+    }
+
+    &__right {
+      padding: 13px;
+      width: 210px;
+    }
+
+    &__sections {
+        width: 210px;
+    }
+  }
+}
+
+@include oGridRespondTo(L) {
+
+  .ft-header {
+
+    a > img {
+      display: inline-block;
+    }
+
+    &__center-logo {
+      display: block;
+    }
+
+    &__center-title {
+      margin-left: 0;
+      .ft-header__primary-label {
+        font-size: 18px;
+      }
+    }
+
+    &__left {
+      width: 210px;
+      padding: 8px 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.card {
+
+  background-color: #fff9f1;
+  border-radius: 4px;
+  min-height: 500px;
+  overflow: auto;
+  font-size: 16px;
+  line-height: 1.2;
+  color: oColorsGetPaletteColor(pink-tint5);
+  border: 1px solid oColorsGetPaletteColor(pink-tint3);
+
+  @include oGridRespondTo($from:S, $until:M) {
+    min-height: inherit;
+  }
+
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  & > * {
+    padding: 10px 12px;
+  }
+
+  p {
+    margin: 0 auto 1em;
+  }
+
+  figure {
+    margin: 0 auto 0.75em;
+    img {
+      width: 100%;
+    }
+    object {
+     height: 100%;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  a {
+    text-decoration: none;
+    color: #2e6e9e;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #000000;
+      transition: color 0s;
+    }
+  }
+
+  &__title {
+    -webkit-font-smoothing: auto;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  &__header {
+    color: #ffffff;
+
+    .card__share {
+      float: right;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  &__body {
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  &__footer {
+    color: oColorsGetPaletteColor(pink-tint5);
+    font-size: 12px;
+  }
+
+  &--index {
+    color: #ffffff;
+    border-width: 0;
+  }
+
+  &__share {
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 26px;
+    height: 26px;
+    font-size: 0;
+    overflow: hidden;
+    text-indent: 100px;
+    font-weight: 400;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--twitter {
+      background-image: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26px" height="22px"><path fill="#ffffff" d="M24.61,3.368c-0.905,0.401-1.878,0.673-2.9,0.795c1.042-0.625,1.843-1.614,2.22-2.793c-0.976,0.579-2.056,0.999-3.207,1.225C19.803,1.613,18.491,1,17.039,1c-2.789,0-5.049,2.261-5.049,5.049c0,0.396,0.045,0.781,0.131,1.151C7.924,6.989,4.204,4.979,1.713,1.924C1.279,2.67,1.03,3.537,1.03,4.462c0,1.752,0.891,3.297,2.246,4.203C2.448,8.639,1.669,8.412,0.989,8.034c0,0.021,0,0.042,0,0.063c0,2.446,1.741,4.487,4.05,4.951c-0.424,0.115-0.87,0.177-1.33,0.177c-0.325,0-0.642-0.032-0.95-0.091c0.643,2.006,2.507,3.466,4.717,3.506c-1.728,1.354-3.905,2.162-6.271,2.162c-0.408,0-0.81-0.024-1.205-0.071C2.234,20.164,4.888,21,7.74,21c9.287,0,14.365-7.693,14.365-14.366c0-0.219-0.005-0.437-0.015-0.653C23.077,5.27,23.933,4.38,24.61,3.368z"/></svg>');
+    }
+  }
+
+  &__group {
+    margin-bottom: 50px;
+
+    &-item {
+      // padding: 6px 1% 6px 0;
+      color: oColorsGetPaletteColor(grey-tint5);
+      -webkit-font-smoothing: antialiased;
+
+      @include oGridRespondTo($from:S, $until:M) {
+        padding: 6px 0;
+      }
+
+      @include oGridRespondTo(M) {
+        display: flex;
+      }
+
+      margin-bottom: 10px;
+
+      & > * {
+        flex: 1 1 0%;
+      }
+    }
+  }
+
+}
+
+.now-casting {
+  float: right;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.card--index {
+  .card__title {
+    font-weight: 600;
+    font-size: 26px;
+  }
+  .card__body {
+    padding-top: 0;
+  }
+}
+
+.card--index a {
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  &:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.card__share {
+    border: 0;
+    text-decoration: none;
+  }
+}
