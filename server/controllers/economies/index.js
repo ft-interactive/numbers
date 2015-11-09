@@ -11,6 +11,10 @@ function card(req, res) {
   res.render('economies/card');
 }
 
+function home(req, res) {
+  res.render('economies/home');
+}
+
 function find_economy(req, res, next, economy) {
   Promise.all([
     get_dashboard(economy),
@@ -34,6 +38,7 @@ function cache_control(req, res, next) {
 }
 
 function init(router) {
+  router.get('/', home);
   router.param('economy', find_economy);
   router.get('/:economy', cache_control, dashboard);
   router.get('/:economy/cards', cache_control, card);
