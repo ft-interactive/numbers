@@ -7,13 +7,7 @@
   <div class="card__body">
 
     {{#if charturl}}
-    <figure>
-      <object type="image/svg+xml" data="{{charturl}}">
-        <!--[if lt IE 9]>
-        <img src="{{{ svg-fallback-img charturl }}}">
-        <![endif]-->
-      </object>
-    </figure>
+      {{>chart src=charturl}}
     {{/if}}
 
     {{#if body}}
@@ -24,7 +18,7 @@
 
   <div class="card__footer">
     {{#if nowcast}}
-      <p>Data provided by <a href="https://www.now-casting.com/" target="_blank"><img src="https://ig.ft.com/static/sites/2014/economic-indicators/nowcastinglogo5.png" /></a></p>
+      <p style="text-align:right;">Data provided by  {{> nowcastinglink }}</p>
     {{/if}}
 
     {{#if footnote}}

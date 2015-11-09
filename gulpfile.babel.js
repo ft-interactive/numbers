@@ -82,9 +82,10 @@ gulp.task('scsslint', () => {
 
 // sets up watch-and-rebuild for JS and CSS
 gulp.task('watch', done => {
-  runSequence(['scripts', 'styles'], () => {
+  runSequence(['scripts', 'styles', 'images'], () => {
     gulp.watch('./client/**/*.scss', ['styles', 'scsslint']);
     gulp.watch('./client/**/*.js', ['scripts'/*, 'js lint'*/]);
+    gulp.watch('./client/**/*.{jpg,png,gif,svg}', ['images']);
     done();
   });
 });

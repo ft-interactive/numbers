@@ -51,6 +51,7 @@
     }
   }
 
+
   &__title {
     -webkit-font-smoothing: auto;
     padding: 0;
@@ -82,6 +83,10 @@
   &__footer {
     color: oColorsGetPaletteColor(pink-tint5);
     font-size: 12px;
+
+    & :last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--index {
@@ -134,12 +139,6 @@
     }
   }
 
-}
-
-.now-casting {
-  float: right;
-  display: inline-block;
-  vertical-align: bottom;
 }
 
 .card--index {
