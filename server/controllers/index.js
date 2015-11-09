@@ -1,7 +1,7 @@
 'use strict';
 
 function home(req, res) {
-  res.redirect('/about');
+  res.redirect('/economies/');
 }
 
 function init(router) {
