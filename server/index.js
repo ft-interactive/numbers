@@ -39,6 +39,11 @@ if (app.get('env') === 'development') {
 app.use('/__gtg', gtg.middleware);
 app.use('/__health', health.middleware);
 
+app.use('/sites/numbers/google65d63e0f29bae338.html', (req, res, next) => {
+  res.type('html');
+  res.status(200).send('google-site-verification: google65d63e0f29bae338.html');
+});
+
 app.use('/sites/numbers', enrouten({
   index: 'controllers/',
   directory: 'controllers'
