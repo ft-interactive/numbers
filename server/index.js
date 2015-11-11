@@ -51,11 +51,14 @@ app.use('/sites/numbers', enrouten({
 
 const static_options = app.get('env') === 'development' ? {
   etag:false,
-  maxAge: 0,
+  maxAge: 0
 } : {
   etag: false,
   maxAge: '1y',
-  lastModified: false
+  lastModified: false,
+  setHeaders: function (res, path, stat) {
+    res.set('Access-Control-Allow-Origin', 'https://ig.ft.com');
+  }
 };
 
 app.use(express.static('public', static_options));
