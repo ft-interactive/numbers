@@ -17,7 +17,7 @@
       <div class="articlehead__byline">By {{#each dashboard.credits ~}}
         {{#if @last}}{{#unless @first}} and {{/unless}}{{else}}{{#unless @first}}, {{/unless}}{{/if}}
         {{#if url ~}}
-          <a href="{{ url }}">{{name}}</a>
+          <a href="{{ url }}" rel="nofollow">{{name}}</a>
         {{else}}
           {{name}}
         {{~/if}}
