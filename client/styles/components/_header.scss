@@ -27,13 +27,24 @@
     overflow: hidden;
     height: 50px;
     display: none;
+
+    a {
+      display: inline-block;
+      height: 100%;
+      line-height: 49px;
+    }
+
     .o-ft-icons-icon--brand-ft-masthead {
       font-size: 250px;
       text-decoration: none;
-      line-height: 236px;
+      line-height: 250px;
       color: #000000;
       opacity: 0.8;
       transition: opacity 0.3s;
+      &:before {
+        display: block;
+        height: 0.085em;
+      }
       &:hover {
         opacity: 1;
       }
@@ -198,6 +209,7 @@
       padding: 8px 10px;
       opacity: 0;
       transition: opacity 0.3s;
+
     }
   }
 }
