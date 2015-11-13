@@ -7,8 +7,8 @@ const Swag = require('swag');
 const extend_next_handlebars = require('@financial-times/n-handlebars/src/extend-helpers');
 const helper_dir = __dirname + '/helpers/';
 const helpers = glob.sync(helper_dir + '**/*.js').reduce((o, filename) => {
-  let js = require(filename);
-  let name = filename.replace(helper_dir, '').replace(/\.js$/, '');
+  const js = require(filename);
+  const name = filename.replace(helper_dir, '').replace(/\.js$/, '');
   if (typeof js === 'function') {
     o[name] = js;
   }

@@ -6,7 +6,7 @@ const url = process.env.LASTEST_DATA_URL ||  'http://interactive.ftdata.co.uk/da
 var last;
 
 function each(data) {
-  let map = data.reduce((o, e) => {
+  const map = data.reduce((o, e) => {
     if (e.ftname) {
       e.date = new Date(e.date);
       o[e.ftname] = e;
@@ -23,7 +23,7 @@ module.exports = () => {
     return last;
   }
 
-  let poller = new Poller(url);
+  const poller = new Poller(url);
   poller.each = each;
 
   return last = poller.start();

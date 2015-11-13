@@ -4,7 +4,7 @@ const Handlebars = require('handlebars');
 
 module.exports = function (text) {
 
-  var html = '';
+  let html = '';
 
   if (!text) {
     return '';

@@ -65,7 +65,7 @@ app.use(express.static('public', static_options));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -93,7 +93,7 @@ var messages = {
 };
 
 app.use((err, req, res, next) => {
-  let status = err.status || 500;
+  const status = err.status || 500;
   res.status(status);
   res.render('error', {
     message: messages[status],

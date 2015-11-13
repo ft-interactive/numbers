@@ -36,7 +36,7 @@ function map_reduce_options(o, row) {
 }
 
 function index_by_group(index, row) {
-  let id = row.group;
+  const id = row.group;
   if (index[id]) {
     index[id].push(row);
   } else {
@@ -47,8 +47,8 @@ function index_by_group(index, row) {
 
 function build_groups(groups, card_index) {
   return groups.map(function(group) {
-    let id = group.id;
-    let indicators = id && this[id];
+    const id = group.id;
+    const indicators = id && this[id];
     if (id && indicators) {
       group.cards = indicators.map(indicator=>{
         indicator.group = group;

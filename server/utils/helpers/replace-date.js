@@ -2,12 +2,12 @@
 
 const Handlebars = require('handlebars');
 
-var long_months = [
+const long_months = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July',
   'August', 'September', 'October', 'November', 'December'
 ]
 
-var short_months = [
+const short_months = [
   'Jan', 'Feb', 'Mar', 'Apr',
   'May', 'Jun', 'Jul', 'Aug',
   'Sep', 'Oct', 'Nov', 'Dec'
@@ -17,7 +17,7 @@ module.exports = function (date, string) {
 
   if (!(date instanceof Date)) return new Handlebars.SafeString(string);
 
-  var result = string;
+  let result = string;
 
   if (result.indexOf('QQ') !== -1) {
     result = result.replace('QQ', 'Q' + get_quarter(date));
