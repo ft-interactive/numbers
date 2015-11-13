@@ -8,14 +8,15 @@ const urls = {};
 
 urls.us = spreadsheet.dashboard_data_url('10WUqpLJvOi1XBTphamV0pusNvwCji3mYYilwPTDu85M');
 urls.uk = spreadsheet.dashboard_data_url('1zxgqC77xTm9Wp9mFe2BRXxJ4o_dNNedxUpx5PNVXBiY');
+
+// dashboards in development
 urls._japan = spreadsheet.dashboard_data_url('1jN8KsOWEFCFsUDU_1h_QZ_HnGKL29TkpMSjRWxdBr-w');
+urls._china = spreadsheet.dashboard_data_url('1j6V0OpSP4KJRaWirUGoPRU1rA5ACL7Y_x32ZFg1-GnE');
 
 if (process.env.NODE_ENV !== 'production') {
   // test use cases and new spreadsheet structure
   urls.test = spreadsheet.dashboard_data_url('1I2gBcr29kDHXYhBbSTHfO0VVFFwYzvGICl_XaktN21w');
 
-  // dashboards in development. dont allow them in prod yet
-  urls.china = spreadsheet.dashboard_data_url('1j6V0OpSP4KJRaWirUGoPRU1rA5ACL7Y_x32ZFg1-GnE');
 }
 
 const dashboards = {};
