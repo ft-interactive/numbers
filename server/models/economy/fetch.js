@@ -62,3 +62,4 @@ function create_poller(name, url) {
 }
 
 module.exports.pollers = pollers;
+module.exports.urls = urls;

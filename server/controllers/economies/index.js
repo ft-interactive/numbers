@@ -15,6 +15,18 @@ function home(req, res) {
   res.render('economies/home');
 }
 
+function republish_urls(req, res) {
+  var urls = Object.assign({}, get_dashboard.urls);
+  for (let name in urls) {
+    urls[name] = urls[name].replace('/view/', '/republish/');
+  }
+  res.send(urls);
+}
+
+function read_urls(req, res) {
+  res.send(get_dashboard.urls);
+}
+
 function find_economy(req, res, next, economy) {
   Promise.all([
     get_dashboard(economy),
@@ -42,6 +54,8 @@ function init(router) {
   router.param('economy', find_economy);
   router.get('/:economy', cache_control, dashboard);
   router.get('/:economy/cards', cache_control, card);
+  router.get('/urls/republish', republish_urls);
+  router.get('/urls/read', read_urls);
 }
 
 module.exports = init;
