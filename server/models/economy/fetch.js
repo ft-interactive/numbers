@@ -52,6 +52,7 @@ function create_poller(name, url) {
 
   poller.each = data => {
     const dashboard = spreadsheet.create_dashboard(data);
+    dashboard.name = name;
     dashboards[name] = Promise.resolve(dashboard);
     return dashboard;
   };
