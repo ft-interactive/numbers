@@ -1,17 +1,31 @@
 @import 'var';
-@import 'normalize';
-@import 'o-colors/main';
 
+// Normalise/reset styles
+@import 'normalize';
+
+/**
+*
+* ORIGAMI
+*/
+// Predefine default variables defined in module variables
 @import "origami-overrides/variable-override";
+// Import Origami modules
+@import 'o-colors/main';
 @import "o-grid/main";
 @import "o-hoverable/main";
-
+// Project specific overrides of Origami modules styles
 @import "origami-overrides/o-footer";
 @import "origami-overrides/o-grid";
 
+/**
+*
+* Site-wide styles
+*/
+// basic styles
 @import "site/base";
 @import "site/type";
 
+// page components 
 @import "components/articlehead";
 @import "components/card";
 @import "components/bignums";
@@ -19,3 +33,9 @@
 @import "components/header";
 @import "components/nav";
 @import "components/nowcasting";
+
+/**
+* Page specific styles
+*
+*/
+// @import "pages/dashbord";
