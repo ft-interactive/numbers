@@ -2,7 +2,7 @@
   {{#is-number value}}
     <div class="headline-figs" {{#if date}}title="Data last updated {{date date}}"{{/if}}>
       <div class="bignum-heading">{{replace-date date heading}}</div>
-      <div class="bignum">{{dp value 2}}<span>{{units}}</span></div>
+      <div class="bignum">{{dp 2}}<span>{{units}}</span></div>
     </div>
   {{/is-number}}
 {{/if}}
