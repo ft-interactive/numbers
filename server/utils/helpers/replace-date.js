@@ -13,6 +13,10 @@ const short_months = [
   'Sep', 'Oct', 'Nov', 'Dec'
 ];
 
+const short_days = [
+	'Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'
+];
+
 module.exports = function (date, string) {
 
   if (!(date instanceof Date)) return new Handlebars.SafeString(string);
@@ -34,6 +38,14 @@ module.exports = function (date, string) {
   if (result.indexOf('YYYY') !== -1) {
     result = result.replace('YYYY', date.getUTCFullYear());
   }
+	
+	if (result.indexOf('DAY') !== -1) {
+		result = result.replace('DAY', short_days[date.getUTCDay()]);
+	}
+	
+	if (result.indexOf('DD') !== -1) {
+		result = result.replace('DD', date.getUTCDate());
+	}
 
   return new Handlebars.SafeString(result);
 };
