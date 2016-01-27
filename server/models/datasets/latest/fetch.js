@@ -1,15 +1,15 @@
 'use strict';
 
 const Poller = require('../../../utils/poller');
-const url = process.env.LASTEST_DATA_URL ||  'http://interactive.ftdata.co.uk/data/bloomberg-economics/latest.json';
+const url = process.env.LASTEST_DATA_URL ||  'https://ig.ft.com/autograph/data/latest.json';
 
 var last;
 
 function each(data) {
   const map = data.reduce((o, e) => {
-    if (e.ftname) {
+    if (e.id) {
       e.date = new Date(e.date);
-      o[e.ftname] = e;
+      o[e.id] = e;
     }
     return o;
   }, {});

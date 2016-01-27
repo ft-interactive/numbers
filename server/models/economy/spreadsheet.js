@@ -5,6 +5,10 @@ exports.dashboard_data_url = (key, republish) =>
 
 exports.create_dashboard = spreadsheet => {
 
+  spreadsheet.data.forEach(d => {
+    d.charturl = d.charturl ? d.charturl.replace('ig.ft.com/graphics/bloomberg-economics', 'ig.ft.com/autograph/graphics') : '';
+  });
+
   let options = spreadsheet.options.reduce(map_reduce_options, {});
   let cards = spreadsheet.data;
   let cards_by_group = cards.reduce(index_by_group, {});
