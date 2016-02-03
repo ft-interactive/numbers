@@ -2,11 +2,11 @@
 
   background-color: #fff9f1;
   border-radius: 4px;
-  min-height: 500px;
+  min-height: 480px;
   overflow: auto;
   font-size: 16px;
   line-height: 1.2;
-  color: oColorsGetPaletteColor(pink-tint5);
+  color: #5A5A53;
   border: 1px solid oColorsGetPaletteColor(pink-tint3);
 
   @include oGridRespondTo($from:S, $until:M) {
@@ -116,7 +116,7 @@
   }
 
   &__group {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     &-item {
       // padding: 6px 1% 6px 0;
