@@ -15,14 +15,12 @@
     <meta name="robots" content="index,follow">
 
     <style>.core .o--if-js,.enhanced .o--if-no-js {display: none !important;}</style>
-    {{>analytics-ga}}
     {{>ctm}}
 
     <link rel="stylesheet" href="https://h2.ft.com/build/v2/bundles/css?modules=o-fonts@^1.8,o-ft-icons@^3,o-footer@^3.1" />
     <link rel="stylesheet" href="{{asset 'styles/main.css'}}">
 
     {{>page-meta}}
-    {{>polyfill}}
 
   </head>
   <body class="o-hoverable-on">
@@ -31,8 +29,10 @@
     <main>{{{body}}}</main>
     
     {{>site-footer}}
+    {{>polyfill}}
     {{>scripts}}
     {{>analytics-ft}}
+    {{>analytics-ga}}
     {{>analytics-chartbeat}}
 
   </body>
