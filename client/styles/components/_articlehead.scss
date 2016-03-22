@@ -6,20 +6,19 @@
     padding-top: 66px;
     font-family: 'FinancierDisplayWeb', serif;
     font-weight: 400;
-    font-size: 1.7em;
+    font-size: 30px;
     color: oColorsGetPaletteColor(grey-tint5);
-    padding-bottom: 4px;
 
     @include oGridRespondTo($from:S, $until:M) {
       padding-top: 68px;
     }
 
     @include oGridRespondTo(M) {
-      font-size: 2em;
+      font-size: 36px;
     }
 
     @include oGridRespondTo(L) {
-      font-size: 2.5em;
+      font-size: 40px;
     }
   }
 
@@ -44,8 +43,8 @@
   }
 
   &__lead {
-    font-size: 1.1em;
-    line-height: 1.6em;
+    font-size: 20px;
+    line-height: 1.4;
     text-align: center;
     color: #44443E;
     max-width: 720px;
@@ -53,8 +52,7 @@
     margin-top: 0.4em;
 
     @include oGridRespondTo($from:S, $until:M) {
-      font-size: 0.875em;
-      line-height: 1.7em;
+      font-size: 18px;
     }
 
     a {
