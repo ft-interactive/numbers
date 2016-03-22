@@ -36,6 +36,17 @@ if (app.get('env') === 'development') {
   })));
 }
 
+app.use('/__access_metadata', (req, res) => { 
+  res.send({
+    access_metadata: [
+      {
+        path_regex: '.*',
+        classification: 'unconditional'
+      }
+    ]
+  });
+});
+
 app.use('/__gtg', gtg.middleware);
 app.use('/__health', health.middleware);
 
