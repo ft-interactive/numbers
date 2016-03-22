@@ -19,16 +19,17 @@
     }
 
     @include oGridRespondTo(L) {
-      font-size: 2.6em;
+      font-size: 2.5em;
     }
   }
 
   &__byline {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    color: #74736c;
+    text-align: center;
+    color: #44443E;
     max-width: 600px;
-    margin: 1em auto;
+    margin: 1em auto 1.5em auto;
 
     a {
       text-decoration: none;
@@ -42,20 +43,12 @@
     }
   }
 
-  &__image {
-    margin: 12px auto 0;
-    max-width: 300px;
-    img {
-      max-width: 300px;
-      height: 100%;
-    }
-  }
-
   &__lead {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.6em;
-    color: oColorsGetPaletteColor(pink-tint5);
-    max-width: 600px;
+    text-align: center;
+    color: #44443E;
+    max-width: 720px;
     margin: auto;
     margin-top: 0.4em;
 
@@ -66,7 +59,7 @@
 
     a {
       text-decoration: none;
-      color: #74736c;
+      color: #44443E;
       display: inline-block;
       background-color: #e9decf;
       padding: 6px;
