@@ -58,26 +58,10 @@
     }
 
     a {
-      text-decoration: none;
-      color: #44443E;
-      display: inline-block;
-      background-color: #e9decf;
-      padding: 6px;
-      line-height: 16px;
-      border-radius: 4px;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
-
-      @include oGridRespondTo($from:S, $until:M) {
-        padding: 4px;
-        line-height: 14px;
-        font-size: 12px;
-      }
-
-      #{$o-hoverable-if-hover-enabled} &:hover {
-        transition: background-color 0s;
-        background-color: oColorsGetPaletteColor(pink-tint3);
+      color: inherit;
+      border: 0;
+      :hover {
+        color: #000000;
       }
     }
 
