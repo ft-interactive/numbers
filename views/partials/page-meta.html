@@ -6,6 +6,10 @@
 
 <meta name="copyright" content="Financial Times">
 
+{{#if meta.canonical_url}}
+<link rel="canonical" href="{{ meta.canonical_url }}" />
+{{/if}}
+
 <meta property="og:site_name" content="{{default meta.og.site_name site.name}}"/>
 
 {{#if meta.og.type}}
@@ -21,7 +25,7 @@
 {{#or meta.og.image meta.image}}
 <meta property="og:image" content="{{default meta.og.image meta.image}}"/>
 {{/or}}
-<meta property="fb:page_id" content="8860325749" />
+<meta property="fb:app_id" content="240084812701288" />
 
 {{#outputBlock 'meta'}}{{/outputBlock}}
 
