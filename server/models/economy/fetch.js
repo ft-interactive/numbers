@@ -54,6 +54,7 @@ function create_poller(name, url) {
   poller.each = data => {
     const dashboard = spreadsheet.create_dashboard(data);
     dashboard.name = name;
+    dashboard.meta.canonical_url = 'https://ig.ft.com/sites/numbers/economies/' + name;
     dashboards[name] = Promise.resolve(dashboard);
     return dashboard;
   };
