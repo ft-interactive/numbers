@@ -6,6 +6,21 @@
 
 <meta name="copyright" content="Financial Times">
 
+{{#if meta.canonical_url}}
+<link rel="canonical" href="{{ meta.canonical_url }}" />
+{{/if}}
+
+{{#if @root.is_prod }}
+<meta property="ft.track:is_live" content="true"/>
+{{/if}}
+
+{{#if meta.uuid }}
+<meta property="ft.track:uuid" content="{{ meta.uuid }}"/>
+{{/if}}
+
+<meta property="ft.track:product" content="IG"/>
+<meta property="ft.track:microsite_name" content="Numbers"/>
+
 <meta property="og:site_name" content="{{default meta.og.site_name site.name}}"/>
 
 {{#if meta.og.type}}
@@ -21,7 +36,7 @@
 {{#or meta.og.image meta.image}}
 <meta property="og:image" content="{{default meta.og.image meta.image}}"/>
 {{/or}}
-<meta property="fb:page_id" content="8860325749" />
+<meta property="fb:app_id" content="240084812701288" />
 
 {{#outputBlock 'meta'}}{{/outputBlock}}
 

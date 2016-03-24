@@ -1,9 +1,57 @@
 <script>
-var FT = FT || {}; FT.Properties = FT.Properties || {}; FT.Properties.ENV = {{#if @root.is_prod }}'p'{{else}}'t'{{/if}};
+(function(){
+
+function init() {
+  var oTracking = Origami['o-tracking'];
+  var product = 'IG'; 
+  var page_data = {
+    content: { asset_type: 'interactive' }
+  };
+
+  var properties = [].reduce.call(document.querySelectorAll('head meta[property^="ft.track:"]')||[], function(o, el) {
+    o[el.getAttribute('property').replace('ft.track:', '')] = el.getAttribute('content');
+    return o;
+  }, {});
+
+  properties.product = properties.product || product;
+  properties.is_live = properties.is_live && properties.is_live.toLowerCase() === 'true'; 
+
+  if (properties.uuid) {
+    page_data.content.uuid = properties.uuid;
+  }
+
+  if (properties.microsite_name) {
+    page_data.content.microsite_name = properties.microsite_name;
+  }
+
+  oTracking.init({
+    server: 'https://spoor-api.ft.com/px.gif',
+    system: { is_live: properties.is_live },
+    context: { product: properties.product }
+  });
+
+  // Automatic link tracking
+  oTracking.link.init();
+  // Register page view
+  oTracking.page(page_data);
+}
+
+var o = document.createElement('script');
+o.async = o.defer = true;
+o.src = 'https://build.origami.ft.com/v2/bundles/js?modules=o-tracking';
+var s = document.getElementsByTagName('script')[0];
+
+if (o.hasOwnProperty('onreadystatechange')) {
+  o.onreadystatechange = function() {
+    if (o.readyState === 'loaded') {
+      init();
+    }
+  };
+} else {
+  o.onload = init;
+}
+
+s.parentNode.insertBefore(o, s);
+
+}());
 </script>
-{{!-- FT tracking module 1.2.5 --}}
-<script src="https://h2.ft.com/static-render-p.ft.com/scripts/a03ca392/bundles/tracking.js"></script>
-<noscript>
-<img alt="" border="0" width="1" height="1" src="http://track.ft.com/track/track.js?javascript=disabled"/>
-<img alt="" border="0" width="1" height="1" src="http://stats.ft.com/si/track.gif?WT.js=No"/>
-</noscript>

@@ -1,11 +1,7 @@
-<header class="articlehead">
+<header class="articlehead articlehead--center">
   <div class="o-grid-row">
     <div data-o-grid-colspan="S12 M12 L12 XL12">
       <h1 class="articlehead__headline" id="main-title">{{{default dashboard.title.html dashboard.title.text}}}</h1>
-    </div>
-  </div>
-  <div class="o-grid-row">
-    <div data-o-grid-colspan="S12 M12 L12 XL12">
       {{#if dashboard.introText.html}}
       <div class="articlehead__lead">{{{dashboard.introText.html}}}</div>
       {{/if}}
@@ -17,6 +13,11 @@
           {{name}}
         {{~/if}}
       {{~/each}}
+      </div>
+      <div class="articlehead__share share__container">
+        <a class="share share--twitter" target="_blank" href="https://twitter.com/intent/tweet?url={{encode dashboard.meta.canonical_url}}&amp;text={{encode (default @root.meta.og.title @root.meta.title)}}" rel="nofollow">Share on Twitter</a>
+        <a class="share share--facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{encode dashboard.meta.canonical_url}}" rel="nofollow">Share on Facebook</a>
+        <a class="share share--linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?source=Financial Times&amp;mini=true&amp;url={{encode dashboard.meta.canonical_url}}&amp;title={{encode (default @root.meta.og.title @root.meta.title)}}&amp;summary={{encode (default meta.og.description meta.description)}}" rel="nofollow">Share on LinkedIn</a>
       </div>
     </div>
   </div>
@@ -31,9 +32,9 @@
 </div>
 
 <div class="onward o-grid-row">
-<div data-o-grid-colspan="S12 M12 L12 XL12">
-<nav class="onward__economies">
-Other economic data dashboards:&nbsp;<a href="uk">British economy</a>&nbsp;&middot; <a href="us">American economy</a>&nbsp;&middot; <a href="japan">Japanese economy</a>&nbsp;&middot; <a href="china">Chinese economy</a> 
-</nav>
-</div>
+  <div data-o-grid-colspan="S12 M12 L12 XL12">
+    <nav class="onward__economies">
+    Other economic data dashboards:&nbsp;<a href="uk">British economy</a>&nbsp;&middot; <a href="us">American economy</a>&nbsp;&middot; <a href="japan">Japanese economy</a>&nbsp;&middot; <a href="china">Chinese economy</a> 
+    </nav>
+  </div>
 </div>

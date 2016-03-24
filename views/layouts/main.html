@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{default meta.title site.name}} – FT.com</title>
+    <title>{{default meta.title site.name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <link rel="preconnect" href="https://h2.ft.com" />
-    <link rel="subresource" href="https://h2.ft.com/polyfill/v2/polyfill.min.js" />
-    <link rel="subresource" href="{{ asset 'scripts/main.js' }}" />
-    <link rel="subresource" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" />
-    <link rel="subresource" href="{{ asset 'images/nowcasting.svg' }}" />
+    <link rel="preconnect" href="https://spoor-api.ft.com">
+    <link rel="preload" type="application/javascript" as="script" href="https://h2.ft.com/polyfill/v2/polyfill.min.js" />
+    <link rel="preload" type="application/javascript" as="script" href="{{ asset 'scripts/main.js' }}" />
+    <link rel="preload" type="text/css" as="style" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" />
+    <link rel="preload" type="image/svg+xml" as="image" href="{{ asset 'images/nowcasting.svg' }}" />
 
     <meta name="robots" content="index,follow">
 
