@@ -55,3 +55,25 @@ s.parentNode.insertBefore(o, s);
 
 }());
 </script>
+<noscript data-o-component="o-tracking">
+<img src="https://spoor-api.ft.com/px.gif?data={{#encodeJSON}}
+{
+    "action": "view",
+    "category": "page",
+    "context": {
+        "content": {
+            "asset_type": "interactive"
+            {{#if meta.uuid }},"uuid": "{{ meta.uuid }}"{{/if}}
+        },
+        "product": "IG",
+        "microsite_name": "Numbers"
+    },
+    "system": {
+        "is_live": {{#if @root.is_prod }}true{{else}}false{{/if}},
+        "apiKey": "qUb9maKfKbtpRsdp0p2J7uWxRPGJEP",
+        "source": "o-tracking-ns",
+        "version": "1.0.0"
+    }
+}
+{{/encodeJSON}}" height="1" width="1" />
+</noscript>
