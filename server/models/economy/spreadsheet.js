@@ -20,6 +20,7 @@ exports.create_dashboard = spreadsheet => {
   dashboard.logo = options.logo;
   dashboard.introText = options.introText;
   dashboard.meta = {
+    uuid: options.uuid && options.uuid.text,
     title: options.title && options.title.text,
     description: options.description && options.description.text,
     keywords: options.keywords && options.keywords.text.split(/, */g),
