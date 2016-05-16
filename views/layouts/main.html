@@ -6,9 +6,10 @@
     <title>{{default meta.title site.name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <link rel="preconnect" href="https://h2.ft.com" />
+    <link rel="preconnect" href="https://origami-build.ft.com" />
+    <link rel="preconnect" href="https://cdn.polyfill.io" />
     <link rel="preconnect" href="https://spoor-api.ft.com">
-    <link rel="preload" type="application/javascript" as="script" href="https://h2.ft.com/polyfill/v2/polyfill.min.js" />
+    <link rel="preload" type="application/javascript" as="script" href="https://cdn.polyfill.io/v2/polyfill.min.js" />
     <link rel="preload" type="application/javascript" as="script" href="{{ asset 'scripts/main.js' }}" />
     <link rel="preload" type="text/css" as="style" href="https://ig.ft.com/graphics/bloomberg-economics/chart-style.css" />
     <link rel="preload" type="image/svg+xml" as="image" href="{{ asset 'images/nowcasting.svg' }}" />
@@ -18,7 +19,7 @@
     <style>.core .o--if-js,.enhanced .o--if-no-js {display: none !important;}</style>
     {{>ctm}}
 
-    <link rel="stylesheet" href="https://h2.ft.com/build/v2/bundles/css?modules=o-fonts@^1.8,o-ft-icons@^3,o-footer@^3.1" />
+    <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^1.8,o-ft-icons@^3,o-footer@^3.1" />
     <link rel="stylesheet" href="{{asset 'styles/main.css'}}">
 
     {{>page-meta}}
