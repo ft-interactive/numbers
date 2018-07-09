@@ -36,7 +36,7 @@ if (app.get('env') === 'development') {
   })));
 }
 
-app.use('/__access_metadata', (req, res) => { 
+app.use('/__access_metadata', (req, res) => {
   res.send({
     access_metadata: [
       {
@@ -73,6 +73,7 @@ const static_options = app.get('env') === 'development' ? {
 };
 
 app.use(express.static('public', static_options));
+app.use('/sites/numbers-static/', express.static('public', static_options));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
