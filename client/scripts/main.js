@@ -23,7 +23,7 @@ function scrollToAnchor () {
 
     if(scrolledY){
       window.scroll(0, scrolledY - yourHeight);
-    } 
+    }
   }
 }
 
@@ -52,3 +52,32 @@ document.querySelector('.ft-header__sections').addEventListener('click', functio
 
 window.onscroll = checkSticky;
 setTimeout(function(){ scrollToAnchor() }, 500);
+
+
+// track when component is visible
+function onChange(changes) {
+  changes.forEach(change => {
+    if(change.isIntersecting || change.intersectionRatio > 0) {
+      const event = new CustomEvent('oTracking.event', {
+        detail: Object.assign({
+          category: 'economic-dashboard',
+          action: 'scrollPast',
+          context: {
+            heading: change.target.getElementsByClassName('card__title')[0].innerText,
+            cardOrder: change.target.getAttribute('data-order'),
+          }
+        }),
+        bubbles: true,
+      });
+
+      document.body.dispatchEvent(event);
+      this.unobserve(change.target);
+    }
+  });
+}
+
+const observer = new IntersectionObserver(onChange, { threshold: [ 1.0 ] });
+
+Array.from(document.querySelectorAll('.card__group-item')).forEach(el => {
+  observer.observe(el)
+});

@@ -1,7 +1,7 @@
 {{#if cards.length}}
-<div id="{{id}}" class="card__group o-grid-row">
+<div id="{{id}}" class="card__group o-grid-row" data-group-order="{{@index}}">
   {{#each cards}}
-    <div class="card__group-item" data-o-grid-colspan="12 S12 M6 L4 XL3">
+    <div class="card__group-item" data-o-grid-colspan="12 S12 M6 L4 XL3" data-card-order="{{@../index}}-{{ @index}}">
       {{#if indexcard}}
         {{>card-index .}}
       {{else}}
