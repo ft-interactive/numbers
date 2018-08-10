@@ -70,20 +70,20 @@ gulp.task('rev', () => {
         .pipe(gulp.dest('public')); // write manifest to build dir
 });
 
-// lints SCSS files
-gulp.task('scsslint', () => {
-  return obt.verify.scssLint(gulp, {
-    sass: './client/styles/*.scss',
-  }).on('error', function (error) {
-    console.error('\n', error, '\n');
-    this.emit('end');
-  });
-});
+// // lints SCSS files
+// gulp.task('scsslint', () => {
+//   return obt.verify.scssLint(gulp, {
+//     sass: './client/styles/*.scss',
+//   }).on('error', function (error) {
+//     console.error('\n', error, '\n');
+//     this.emit('end');
+//   });
+// });
 
 // sets up watch-and-rebuild for JS and CSS
 gulp.task('watch', done => {
   runSequence(['scripts', 'styles', 'images'], () => {
-    gulp.watch('./client/**/*.scss', ['styles', 'scsslint']);
+    gulp.watch('./client/**/*.scss', ['styles'/*, 'scsslint'*/]);
     gulp.watch('./client/**/*.js', ['scripts'/*, 'js lint'*/]);
     gulp.watch('./client/**/*.{jpg,png,gif,svg}', ['images']);
     done();

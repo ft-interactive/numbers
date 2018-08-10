@@ -64,7 +64,7 @@
     "gulp-util": "^3.0.6",
     "hbsfy": "^2.2.1",
     "nodemon": "^1.4.1",
-    "origami-build-tools": "^3.3.0",
+    "origami-build-tools": "^3.3.5",
     "run-sequence": "^1.1.2"
   },
   "engines": {
