@@ -53,7 +53,6 @@ document.querySelector('.ft-header__sections').addEventListener('click', functio
 window.onscroll = checkSticky;
 setTimeout(function(){ scrollToAnchor() }, 500);
 
-
 // track when component is visible
 function onChange(changes) {
   changes.forEach(change => {
@@ -62,10 +61,9 @@ function onChange(changes) {
         detail: Object.assign({
           category: 'economic-dashboard',
           action: 'scrollPast',
-          context: {
-            heading: change.target.getElementsByClassName('card__title')[0].innerText,
-            cardOrder: change.target.getAttribute('data-order'),
-          }
+        }, {
+          heading: change.target.getElementsByClassName('card__title')[0].innerText,
+          cardOrder: change.target.getAttribute('data-card-order'),
         }),
         bubbles: true,
       });
