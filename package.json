@@ -68,7 +68,7 @@
     "run-sequence": "^1.1.2"
   },
   "engines": {
-    "node": "4.2.x",
+    "node": "8.9.x",
     "npm": "2.14.x"
   }
 }
