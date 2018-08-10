@@ -69,13 +69,16 @@ function onChange(changes) {
       });
 
       document.body.dispatchEvent(event);
+      console.log(change.target.getElementsByClassName('card__title')[0].innerText);
       this.unobserve(change.target);
     }
   });
 }
 
-const observer = new IntersectionObserver(onChange, { threshold: [ 1.0 ] });
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(onChange, { threshold: [ 1.0 ] });
 
-Array.from(document.querySelectorAll('.card__group-item')).forEach(el => {
-  observer.observe(el)
-});
+  Array.from(document.querySelectorAll('.card__group-item')).forEach(el => {
+    observer.observe(el);
+  });
+}, false);
