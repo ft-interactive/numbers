@@ -3,7 +3,7 @@
 
 function init() {
   var oTracking = Origami['o-tracking'];
-  var product = 'IG'; 
+  var product = 'IG';
   var page_data = {
     content: { asset_type: 'interactive' }
   };
@@ -14,7 +14,7 @@ function init() {
   }, {});
 
   properties.product = properties.product || product;
-  properties.is_live = properties.is_live && properties.is_live.toLowerCase() === 'true'; 
+  properties.is_live = properties.is_live && properties.is_live.toLowerCase() === 'true';
 
   if (properties.uuid) {
     page_data.content.uuid = properties.uuid;
@@ -34,6 +34,34 @@ function init() {
   oTracking.link.init();
   // Register page view
   oTracking.page(page_data);
+
+  // track when component is visible
+  function onChange(changes) {
+    changes.forEach(change => {
+      if(change.isIntersecting || change.intersectionRatio > 0) {
+        const event = new CustomEvent('oTracking.event', {
+          detail: Object.assign({
+            category: 'economic-dashboard',
+            action: 'scrollPast',
+          }, {
+            heading: change.target.getElementsByClassName('card__title')[0].innerText,
+            cardOrder: change.target.getAttribute('data-card-order'),
+          }),
+          bubbles: true,
+        });
+
+        document.body.dispatchEvent(event);
+        this.unobserve(change.target);
+      }
+    });
+  }
+
+  // Set up scroll depth tracking
+  const observer = new IntersectionObserver(onChange, { threshold: [ 1.0 ] });
+
+  Array.from(document.querySelectorAll('.card__group-item')).forEach(el => {
+    observer.observe(el);
+  });
 }
 
 var o = document.createElement('script');
