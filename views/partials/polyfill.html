@@ -3,7 +3,7 @@
   // set the root element to .core or .enhanced as appropriate
   if (window.cutsTheMustard) {
     document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
-    document.write('<script src="https://h2.ft.com/polyfill/v2/polyfill.min.js"><\/script>');
+    document.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js"><\/script>');
   } else {
     document.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=~html5-elements"><\/script>');
   }

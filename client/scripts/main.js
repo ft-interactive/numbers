@@ -23,7 +23,7 @@ function scrollToAnchor () {
 
     if(scrolledY){
       window.scroll(0, scrolledY - yourHeight);
-    } 
+    }
   }
 }
 
