@@ -12,7 +12,7 @@ function card(req, res) {
 }
 
 function home(req, res) {
-  res.render('economies/home');
+  res.redirect('https://www.ft.com/dashboards');
 }
 
 function republish_urls(req, res) {
