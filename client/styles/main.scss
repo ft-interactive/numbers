@@ -16,6 +16,7 @@
 // Project specific overrides of Origami modules styles
 @import "origami-overrides/o-footer";
 @import "origami-overrides/o-grid";
+@import "origami-overrides/o-message";
 
 /**
 *
@@ -25,7 +26,7 @@
 @import "site/base";
 @import "site/type";
 
-// page components 
+// page components
 @import "components/articlehead";
 @import "components/card";
 @import "components/bignums";
