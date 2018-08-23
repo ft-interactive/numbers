@@ -19,7 +19,7 @@
     <style>.core .o--if-js,.enhanced .o--if-no-js {display: none !important;}</style>
     {{>ctm}}
 
-    <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^1.8,o-ft-icons@^3,o-footer@^3.1" />
+    <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-fonts@^3.0.4,o-ft-icons@^3,o-footer@^6.0.10,o-message@^2.4.0" />
     <link rel="stylesheet" href="{{asset 'styles/main.css'}}">
 
     {{>page-meta}}
@@ -28,8 +28,14 @@
   <body class="o-hoverable-on">
     {{>site-header}}
 
+    {{#if (ifor
+        (eq dashboard.name "uk")
+        (eq dashboard.name "us"))}}
+      {{>survey}}
+    {{/if}}
+
     <main>{{{body}}}</main>
-    
+
     {{>site-footer}}
     {{>polyfill}}
     {{>scripts}}
