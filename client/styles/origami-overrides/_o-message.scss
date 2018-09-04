@@ -1,5 +1,8 @@
 .o-message--inform {
-  margin-top: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 50px;
 }
 
 .visually-hidden {

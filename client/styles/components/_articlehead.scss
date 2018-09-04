@@ -1,18 +1,18 @@
 .articlehead {
 
-  padding-top: 60px;
+  padding-top: 110px;
   padding-bottom: 10px;
- 
+
   font-size: 15px;
-  
+
   @include oGridRespondTo(S) {
     font-size: 16px;
   }
-  
+
   @include oGridRespondTo(M) {
     font-size: 18px;
   }
-  
+
   &__headline,
   &__byline,
   &__lead,
@@ -70,7 +70,7 @@
     }
 
   }
-  
+
   &__share {
     padding-top: 0.5em;
     text-align: center;
@@ -78,5 +78,3 @@
   }
 
 }
-
-
