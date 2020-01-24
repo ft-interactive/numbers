@@ -2,6 +2,7 @@
   <div class="o-grid-row">
     <div data-o-grid-colspan="S12 M12 L12 XL12">
       <h1 class="articlehead__headline" id="main-title">{{{default dashboard.title.html dashboard.title.text}}}</h1>
+      {{!--
       {{#if dashboard.introText.html}}
       <div class="articlehead__lead">{{{dashboard.introText.html}}}</div>
       {{/if}}
@@ -19,18 +20,23 @@
         <a class="share share--facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{encode dashboard.meta.canonical_url}}" rel="nofollow">Share on Facebook</a>
         <a class="share share--linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?source=Financial Times&amp;mini=true&amp;url={{encode dashboard.meta.canonical_url}}&amp;title={{encode (default @root.meta.og.title @root.meta.title)}}&amp;summary={{encode (default meta.og.description meta.description)}}" rel="nofollow">Share on LinkedIn</a>
       </div>
+      --}}
     </div>
   </div>
 </header>
 
 <div class="o-grid-row">
   <div data-o-grid-colspan="S12 M12 L12 XL12">
+    <p style="text-align: center; margin-top: 0; margin-bottom: 0;">The dashboards are temporarily unavailable. Follow the FT's <a href="https://www.ft.com/global-economy">Global Economy page for the latest economic coverage</a>.</p>
+    {{!--
     {{#each dashboard.groups}}
       {{>card-group .}}
     {{/each}}
+    --}}
   </div>
 </div>
 
+{{!--
 <div class="onward o-grid-row">
   <div data-o-grid-colspan="S12 M12 L12 XL12">
     <nav class="onward__economies">
@@ -38,3 +44,4 @@
     </nav>
   </div>
 </div>
+--}}
