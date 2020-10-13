@@ -1,7 +1,6 @@
 'use strict';
 
 const get_dashboard = require('../../models/economy/fetch');
-const get_latest = require('../../models/datasets/latest/fetch.js');
 
 function dashboard(req, res) {
   res.render('economies/dashboard');
@@ -30,10 +29,8 @@ function read_urls(req, res) {
 function find_economy(req, res, next, economy) {
   Promise.all([
     get_dashboard(economy),
-    get_latest()
   ]).then(data => {
     res.locals.dashboard = data[0];
-    res.locals.latest = data[1];
     res.locals.meta = res.locals.dashboard.meta;
     next();
   }).catch(next);
